@@ -28,3 +28,16 @@ bool ListDelete(SqList &L, int i/*删除位置*/, int &e/*可返回删除数据*/)
 	L.length--;//线性表长度-1
 	return true;
 }
+//按位查找（无论静动态）
+int/*类型一致*/ GetElem(SqList L, int i)
+{
+	return L.data[i-1];
+}
+//动态按值查找
+int LocateElem(SqList L, int/*类型相同*/ e)
+{
+	for (int i = 0;i < L.length;i++)
+		if (L.data[i] == e)
+			return i + 1;//位序=下标+1
+	return 0;
+}
